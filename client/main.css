@@ -1,0 +1,23 @@
+body {
+  padding: 10px;
+  font-family: sans-serif;
+}
+
+.bkgrndImg{
+	background: url('chris-lawton-c0rIh0nFTFU-unsplash.jpg');
+	background-size: cover;
+}
+.bkImg{
+	background: #ffffff44; /*rgba*/
+}
+#login-buttons a{
+	text-decoration: none;
+}
+
+.uniform{
+	padding:20px;
+}
+.plusColor{
+	color:purple;
+	font-size: 2rem;
+}
