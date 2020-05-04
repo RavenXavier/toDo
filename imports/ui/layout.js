@@ -11,6 +11,10 @@ import './navbar.html';
 import './layout.html';
 import './mainbody.html';
 import './footerbar.html';
+import './addtask.html';
 
 //api imports
 import '../../lib/collection.js';
+import '../api/addtask.js';
+import '../api/navbar.js';
+import '../api/mainbody.js';

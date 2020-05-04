@@ -2,20 +2,19 @@
   <main role="main">
     <div class="container">
       <div class="row">
-       <!--  {{#each allTask}} -->
-       <div class="col uniform">
+        {{#each publicTask}}
+       <div class="col-3 uniform" id={{_id}}>
          <div class="card border-dark mb-3" style="max-width: 18rem; ">
-          <div class="card-header">Header<i class="float-right fa fa-edit js-edit edColor"></i></div>
+          <div class="card-header">{{list}}<i class="float-right fa fa-edit js-editTask edColor"></i></div>
            <div class="card-body text-dark">
-            <h5 class="card-title">Dark card title</h5>
               <p class="card-text"> 
-                <input type="checkbox">
+                <input type="checkbox"> {{task}}
               </p>
-              <i class="float-right fa fa-plus js-add adColor"></i>
+              <i class="float-right fa fa-trash js-delTask adColor"></i>
             </div>
           </div> 
        </div>
-       <!-- {{/ each}} -->
+       {{/ each}}
       </div>       
     </div>
   </main>
