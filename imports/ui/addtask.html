@@ -24,10 +24,22 @@
 			  <input type="text" class="form-control" id="listName" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 			</div>
 			<!-- {{#each newTasks}} -->
+			<!-- <div class="row"> -->
+				{{#each taskNew}}
+				<div class="row" style="padding: 10px;" id={{_id}}>
+					<div class="input-group mb-3 taskNameInput">
+				  	<input type="text" class="form-control" value="{{task}}" readonly>
+				  	<div class="input-group-append">
+			    		<button class="btn btn-outline-secondary js-delTask" type="button" id="button-addon2 "><i class="fa fa-trash"></i></button>
+						</div>
+			  	</div>  <!-- taskName -->
+				</div>
+				{{/ each}}
+			<!-- </div> -->
 			<div class="input-group mb-3 taskNameInput">
 			  <input type="text" class="form-control" id="taskName" placeholder="New Task" aria-label="Recipient's username" aria-describedby="button-addon2">
 			  <div class="input-group-append">
-			    <button class="btn btn-outline-secondary" type="button" id="button-addon2 "><i class="fa fa-plus js-newTask "></i></button>
+			    <button class="btn btn-outline-secondary js-newTask" type="button" id="button-addon2 "><i class="fa fa-plus"></i></button>
 			  </div>
 			</div> <!-- taskName -->
 			<!-- {{/ each}} -->

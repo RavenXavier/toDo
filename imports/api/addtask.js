@@ -20,5 +20,20 @@ Template.addTask.events({
 	},
 	'click .js-newTask'(event, instance){
 		console.log("new");
+		var myTask = $("#taskName").val();
+		testCodedb.insert({
+			"task": myTask
+		
+		});
+	},
+	'click .js-delTask'(event, instance){
+		var myId = this._id;
+		testCodedb.remove({_id:myId});
+	}
+});
+
+Template.addTask.helpers({
+	taskNew(){
+		return testCodedb.find();
 	}
 });
