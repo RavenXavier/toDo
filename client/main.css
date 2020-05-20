@@ -5,7 +5,7 @@ body {
 
 .bkgrndImg{
 	background: url('chris-lawton-c0rIh0nFTFU-unsplash.jpg');
-	background-size: cover;
+	background-size: fixed;
 }
 .bkImg{
 	background: #ffffff44; /*rgba*/
@@ -32,10 +32,10 @@ body {
 .design{
 	background-color: #343a40;
 }
-/*.sideBar a:hover{
+.sideBar a:hover{
 	background-color: #555;
 	color: white;
-}*/
+}
 /*.Color{
 	color: #858e97f2;
 }*/
