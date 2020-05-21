@@ -1,3 +1,4 @@
 import '../imports/ui/layout.js';
 
-Meteor.subscribe('taskLists');
+Meteor.subscribe('Taskpub');
+Meteor.subscribe('Taskpri');
