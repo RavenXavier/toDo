@@ -2,6 +2,13 @@ Template.privateTodos.helpers({
 	privateTask(){
 		return privateTasksdb.find();
 	},
+	Taskpri: function (){
+		if(Session.get("hideIncomplete")){
+			return publicTasksdb.find({checked: {$ne: true}});
+		} else {
+			return publicTasksdb.find({});
+		}
+	},
 	checked: function(){
 		var myCompleted = this.completed;
 		if(myCompleted){
@@ -10,7 +17,7 @@ Template.privateTodos.helpers({
 			return "";
 		}
 	},
-	userField(){//ceck to see if image has a saved user
+	userField(){ //ceck to see if content a saved user
 		if (!(this.createdBy == undefined)){
 			return true;
 		}
@@ -32,7 +39,10 @@ Template.privateTodos.events({
 	'click .js-editTask'(event, instance){
 		console.log(this._id);
 	},
-	'change [type=checkbox]': function(){
+	'change .hide-incomplete input': function (event) {
+      Session.set("hideIncompleted", event.target.checked);
+   },
+	'change [type=chk]': function(){
 		var myId = this._id;
 		var myCompleted = this.completed;
 		if(myCompleted){

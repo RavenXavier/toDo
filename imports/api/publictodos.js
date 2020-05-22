@@ -2,6 +2,16 @@ Template.publicTodos.helpers({
 	publicTask(){
 		return publicTasksdb.find();
 	},
+	Taskpub: function (){
+		if(Session.get("hideIncomplete")){
+			return publicTasksdb.find({checked: {$ne: true}});
+		} else {
+			return publicTasksdb.find({});
+		}
+	},
+	hideIncomplete: function(){
+		return Session.get("hideIncomplete")
+	},
 	checked: function(){
 		var myCompleted = this.completed;
 		if(myCompleted){
@@ -29,10 +39,10 @@ Template.publicTodos.events({
 		publicTasksdb.remove({_id:myId});
 		});
 	},
-	'click .js-editTask'(event, instance){
-		console.log(this._id);
-	},
-	'change [type=checkbox]': function(){
+	// 'change .hide-incomplete input': function (event) {
+ //      Session.set("hideIncompleted", event.target.checked);
+ //   },
+	'change [id=chk]': function(){
 		var myId = this._id;
 		var myCompleted = this.completed;
 		if(myCompleted){
@@ -50,5 +60,8 @@ Template.publicTodos.events({
 			}});
 			console.log("Task marked as complete: "+ myId);
 		}
+	},
+	'change [id=hide]': function(){
+		Session.set("hideIncompleted", event.target.checked);
 	}
 });
