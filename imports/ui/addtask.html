@@ -20,17 +20,14 @@
 	      <div class="modal-body"> 
 					<div class="input-group mb-3 taskNameInput">
 					  <input type="text" class="form-control" id="taskName" placeholder="New Task" aria-label="Recipient's username" aria-describedby="button-addon2">
-					 <!--  <div class="input-group-append">
-					    <button class="btn btn-outline-secondary js-newTask" type="button" id="button-addon2 "><i class="fa fa-plus"></i></button>
-					  </div> -->
 					</div> <!-- taskName -->
-					<!-- {{#if userField}} -->
+					<div id={{_}}>
 					<form>
-						<input type="radio" id="p1" name="myForm" value="newPub" > Public 
-						<input type="radio" id="p2" name="myForm" value="newPri"> Private
+							<input type="radio" id="p1" name="myForm" value="newPub" > Public 
+							<input type="radio" id="p2" name="myForm" value="newPri"> Private
+							<input type="text" id="statId">
 					</form>
-					<!-- {{/if }} -->
-
+					</div>
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-secondary js-closeMe" data-dismiss="modal">Close</button>
